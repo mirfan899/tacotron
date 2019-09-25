@@ -5,7 +5,7 @@ import tensorflow as tf
 hparams = tf.contrib.training.HParams(
   # Comma-separated list of cleaners to run on text prior to training and eval. For non-English
   # text, you may want to use "basic_cleaners" or "transliteration_cleaners" See TRAINING_DATA.md.
-  cleaners='english_cleaners',
+  cleaners='basic_cleaners',
 
   # Audio:
   num_mels=80,
@@ -16,6 +16,8 @@ hparams = tf.contrib.training.HParams(
   preemphasis=0.97,
   min_level_db=-100,
   ref_level_db=20,
+  fmin=125,
+  fmax=7600,
 
   # Model:
   outputs_per_step=5,
